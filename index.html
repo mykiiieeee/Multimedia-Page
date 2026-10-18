@@ -82,6 +82,23 @@
             </div>
         </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const allMedia = document.querySelectorAll('audio, video');
 
+            allMedia.forEach(media => {
+                media.addEventListener('play', () => {
+                    allMedia.forEach(otherMedia => {
+                        if (otherMedia !== media) {
+                            otherMedia.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+    
 </body>
 </html>
